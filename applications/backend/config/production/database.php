@@ -9,10 +9,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'mysql.hostinger.fr';
-$db['default']['username'] = 'u911219354_pdld';
-$db['default']['password'] = '8aoGBulwXz4S';
-$db['default']['database'] = 'u911219354_pdld';
+$db['default']['hostname'] = 'localhost';
+$db['default']['username'] = 'root';
+$db['default']['password'] = 'root';
+$db['default']['database'] = 'pdld';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

@@ -1,6 +1,7 @@
 Options +FollowSymlinks
 RewriteEngine on
+
 RewriteCond $1 !^(index\.php|backend\.php|assets|robots\.txt|admin)
 
-
 RewriteRule ^(.*)$ ./index.php/$1 [L]
+
