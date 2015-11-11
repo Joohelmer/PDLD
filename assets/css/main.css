@@ -191,7 +191,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 /******************/
 #slider {
     width: 100%;
-    height: 1200px;
+    /*height: 1200px;*/
     position: relative;
 }
 #slider:before{
@@ -328,24 +328,28 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 .autocomplete-info {
-    font-size: 14px;
+    font-size: 20px;
     line-height: 16px;
     display: block;
     -ms-word-wrap: break-word;
     word-wrap: break-word;
     margin-bottom: 5px;
 }
-
 .is-highlight{
     font-weight: bold;
     text-decoration: underline;
 }
-
 .autocomplete-figure{
     float: left;
     margin-right: 15px;
     min-height: 40px;
 }
+.more_results{
+    padding: 15px;
+    font-size: 16px;
+    line-height: 16px;
+}
+
 .carousel {
     position: relative;
 }

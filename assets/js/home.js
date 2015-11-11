@@ -54,7 +54,7 @@ $(function() {
         },
         open: function(event, ui) {
             console.log(event);
-            $('.ui-autocomplete').append('<li><a href="'+base_url+'recherche?query='+encodeURIComponent(event.target.value)+'">Voir tous les résultats pour « '+event.target.value+' » </a></li>'); //See all results
+            $('.ui-autocomplete').append('<li><a class="more_results" href="'+base_url+'recherche?query='+encodeURIComponent(event.target.value)+'">Voir tous les résultats pour « '+event.target.value+' » </a></li>'); //See all results
         }
     }).autocomplete("instance")._renderItem = function (ul, item) {
 
@@ -63,7 +63,7 @@ $(function() {
                 template = "<span class='" + cls + "'>$1</span>",
                 label = item.titre.replace( re, template ),
                 $li = $( "<li/>" ).appendTo( ul );
-        var html = "<figure class='autocomplete-figure'><img src='"+base_url+"/assets/uploads/"+item.image+"' width='80' /></figure><div class='autocomplete-info'> "+ label + "</div>";
+        var html = "<figure class='autocomplete-figure'><img src='"+base_url+"/assets/uploads/"+item.image+"' width='120' /></figure><div class='autocomplete-info'> "+ label + "</div>";
 
         $( "<a/>" ).attr( "href", item.url )
                    .html(html)
