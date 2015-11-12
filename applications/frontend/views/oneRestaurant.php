@@ -104,7 +104,7 @@
     		<aside class="col-md-4">
     			<div class="static_map">
     				<img src="https://maps.googleapis.com/maps/api/staticmap?center=<?= $restaurant->latitude ?>,<?= $restaurant->longitude ?>&zoom=14&size=390x245&maptype=roadmap&markers=color:pink%7C<?= $restaurant->latitude ?>,<?= $restaurant->longitude ?>&language=fr_FR&key=AIzaSyDIl4kZLNyfm86Q9hmfU6J32PnxQ5GFB2g">
-    				<div title="Voir sur la carte" onclick="showMap('restaurants',<?= $restaurant->id; ?>);" class="extend"><i class="fa fa-eye"></i></div>
+    				<div title="Voir sur la carte" onclick="showMap('restaurants',<?= $restaurant->id; ?>);" class="extend"><i class="fa fa-eye"></i> Voir sur la carte</div>
     			</div>
     			<div class="detail_section">
     				<h3>Informations</h3>

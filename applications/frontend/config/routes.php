@@ -48,13 +48,15 @@ $route['actualite/(:num)/(:any)'] = "actualite/oneActualite/$1/$2";
 
 $route['restaurants/ville/(:any)'] = "restaurants/filter_restaurants";
 $route['restaurants/ville/(:any)/page/(:num)'] = "restaurants/filter_restaurants";
-
-
 $route['restaurants/'] = "restaurants/index";
 $route['restaurants/page/(:num)'] = "restaurants/index";
-
-
 $route['restaurant/(:num)/(:any)'] = "restaurants/oneRestaurant/$1";
+
+$route['evenements/ville/(:any)'] = "evenements/filter_evenements";
+$route['evenements/ville/(:any)/page/(:num)'] = "evenements/filter_evenements";
+$route['evenements/'] = "evenements/index";
+$route['evenements/page/(:num)'] = "evenements/index";
+$route['evenement/(:num)/(:any)'] = "evenements/oneEvenement/$1";
 
 
 $route['espace-professionnel'] = "user/espace_pro/";

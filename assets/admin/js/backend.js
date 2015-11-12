@@ -13,6 +13,19 @@ $(document).ready(function(){
 	  	GetLocation2();
 	}
 
+	if( window.location.href.indexOf('evenement/index/edit/') >= 0 || window.location.href.indexOf('evenement/index/add') >= 0 ){
+
+		htmlbutton = '<input class="btn btn-large" type="button" onclick="GetLocation()" value="Trouver l\'adresse" />';
+		$('#cp_input_box').after(htmlbutton);
+
+		html = '<div id="map-canvas" class="form-input-box"></div>';
+		html += '<div class="clear"></div>';
+		$('#cp_field_box .clear').after(html);
+
+
+		GetLocation2();
+	}
+
 
 	$('#field_ville_chzn .chzn-results li').click(function(e) {
 		$.ajax({

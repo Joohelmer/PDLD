@@ -37,7 +37,7 @@
                             <li><a <?php if($menu == "restaurants") echo "class='active'" ?> href="<?php echo base_url('restaurants') ?>" title=""><i class="fa icon-restau"></i>Se restaurer</a></li>
                             <li><a <?php if($menu == "sejourner") echo "class='active'" ?> title="">Séjourner</a></li>
                             <li><a <?php if($menu == "divertir") echo "class='active'" ?> title="">Se divertir</a></li>
-                            <li><a <?php if($menu == "evenements") echo "class='active'" ?> title="">Evènements</a></li>
+                            <li><a <?php if($menu == "evenements") echo "class='active'" ?> href="<?php echo base_url('evenements') ?>" title="">Evènements</a></li>
                             <li><a <?php if($menu == "commerces") echo "class='active'" ?> title="">Commerces</a></li>
                         </ul>
                     </nav>

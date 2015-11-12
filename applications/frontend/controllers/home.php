@@ -50,7 +50,9 @@ class Home extends CI_Controller {
                 $allinfos = $this->db->query('SELECT * FROM restaurants')->result();
                 break;
             case 'evenements':
-                # code...
+                $infomap = $this->db->query('SELECT * FROM evenements  WHERE id = '.(int)$id)->row();
+                $allinfos = $this->db->query('SELECT * FROM evenements')->result();
+                break;
                 break;
             case 'hebergements':
                 # code...

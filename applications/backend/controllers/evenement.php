@@ -23,7 +23,7 @@ class Evenement extends MY_Controller {
 
 		$crud->set_subject('evenement');
 
-		$crud->set_field_upload('image','assets/uploads/');
+		$crud->set_field_upload('image1','assets/uploads/');
 		
 		$this->mTitle = "Les événements";
 		$this->mViewFile = '_partial/crud';

@@ -127,7 +127,7 @@
                         <?php } ?>
                         </ul>
                     </div>
-                    <div><span class="btn-center"><a class="btn btn-primary text-upper" href="#" title="Tous les événements">Tous les événements</a></span></div>
+                    <div><span class="btn-center"><a class="btn btn-primary text-upper" href="<?php echo base_url('evenements') ?>" title="Tous les événements">Tous les événements</a></span></div>
                 </section>
             </div>
         </div>
