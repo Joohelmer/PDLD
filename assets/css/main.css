@@ -91,7 +91,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     margin: 0;
     padding: 0;
 }
-#main-menu li {
+#main-menu > li {
     display: list-item;
     float: left;
     list-style: none outside none;
@@ -100,7 +100,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     cursor: pointer;
     position: relative;
 }
-#main-menu li a {
+#main-menu > li > a {
     color: #ccc;
     display: block;
     line-height: 20px;
@@ -108,11 +108,12 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-size: 16px;
     font-weight: 700;
     text-transform: uppercase;
+    text-decoration: none;
 }
-#main-menu li a.active{
+#main-menu > li > a.active{
     color: #EE2588;
 }
-#main-menu li:hover > a {
+#main-menu > li:hover > a {
     color: #EE2588;
 }
 .menu-toggle {
@@ -123,6 +124,70 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     border: none;
     outline: none;
     color:#EE2588;
+}
+#main-menu .dropdown-menu{
+    background: #000;
+    margin: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+.navbar-brand {
+    width: 70px;
+    height: 50px;
+    background: url('http://www.sneaker-mission.com/uploads/3/1/2/7/31279819/5617441.png') no-repeat center center;
+    background-size: 50px;
+}
+
+.nav-tabs {
+    display: inline-block;
+    border-bottom: none;
+    padding-top: 15px;
+    font-weight: bold;
+}
+.nav-tabs > li > a{
+    border: none;
+    border-radius: 0;
+    color: #FFF;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li > a:hover,
+.nav-tabs > li > a:focus,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+    border: none;
+    border-radius: 0;
+    color: #EE2588;
+}
+.nav-list > li {
+    padding: 20px 15px 15px;
+    border-left: 1px solid #eee;
+}
+.nav-list > li:first-child {
+    border-left: 0;
+}
+.nav-list > li > a:hover {
+    text-decoration: none;
+}
+.nav-list > li > a > span {
+    display: block;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #FFF;
+}
+
+.nav-list > li:hover > a > span {
+    color: #EE2588;
+}
+
+.mega-dropdown {
+    position: static !important;
+}
+.mega-dropdown-menu {
+    padding: 20px 15px 15px;
+    text-align: center;
+    width: 100%;
 }
 
 /******************/
@@ -564,7 +629,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 a.btn.btn-primary.text-upper {
     background-color: #EE2588;
 }
-.btn-primary, .btn-primary:hover, .btn-primary:focus, #main-menu li ul {
+.btn-primary, .btn-primary:hover, .btn-primary:focus, #main-menu > li > ul {
     border-color: #EE2588;
     background-color: #EE2588;
 
@@ -580,7 +645,7 @@ a.btn.btn-primary.text-upper {
     display: block;
     text-align: right;
 }
-.btn-primary, .btn-primary:hover, .btn-primary:focus, #main-menu li ul {
+.btn-primary, .btn-primary:hover, .btn-primary:focus, #main-menu > li > ul {
     border-color: #EE2588;
 }
 .pub{
@@ -1098,10 +1163,13 @@ a.btn.btn-primary.text-upper {
         padding: 20px;
         z-index: 5;
     }
-    #main-menu li {
+    #main-menu > li {
         width: 100%;
         padding: 0px;
         margin-left: 0px;
+    }
+    .nav-list > li {
+        border-left: 0px;
     }
 
     .menu-toggle {
