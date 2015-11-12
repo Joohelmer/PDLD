@@ -9,7 +9,6 @@ class Home extends CI_Controller {
         parent::__construct();
         $this->load->library("session");
         $this->load->helper('truncate');
-
     }
 
     public function index()
@@ -177,7 +176,7 @@ class Home extends CI_Controller {
         $recherche = $this->input->get('recherche', TRUE);
         $type = $this->input->get('type', TRUE);
 
-        $result = $this->grep_db('ci_bootstrap',$recherche,$type,4);
+        $result = $this->grep_db($this->db->database,$recherche,$type,4);
 
         $autocomplete = array();
         foreach ($result as $key => $r) {
@@ -193,7 +192,7 @@ class Home extends CI_Controller {
     public function recherche(){
         $recherche = $this->input->get('query', TRUE);
         $type = $this->input->get('type', TRUE);
-        $result = $this->grep_db('ci_bootstrap',$recherche,$type,0);
+        $result = $this->grep_db($this->db->database,$recherche,$type,0);
 
         var_dump($result);die;
     }
