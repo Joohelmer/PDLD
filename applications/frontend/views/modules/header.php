@@ -38,7 +38,7 @@
                             <li><a <?php if($menu == "sejourner") echo "class='active'" ?> title="">Séjourner</a></li>
                             <li class="dropdown mega-dropdown active">
                                 <a href="<?php echo base_url('se-divertir') ?>" <?php if($menu == "divertir") echo "class='dropdown-toggle active'" ?> class="dropdown-toggle" title="">Se divertir</a>
-                                <div class="dropdown-menu mega-dropdown-menu hidden-xs hidden-sm">
+                                <div class="dropdown-menu mega-dropdown-menu hidden-xs">
                                     <div class="container-fluid">
                                         <!-- Tab panes -->
                                         <div class="tab-content">
