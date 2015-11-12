@@ -115,7 +115,7 @@
                                 <li>
                                     <a title="<?= $evenement->titre ?> à <?= $evenement->ville ?>" href="<?php echo base_url('evenement/').'/'.$evenement->id.'/'.url_title($evenement->titre) ?>">
                                         <span class="event-image">
-                                            <img class="img-responsive" src="<?php echo base_url('assets/uploads/').'/'.$evenement->image; ?>" alt="<?= $evenement->titre ?>">
+                                            <img class="img-responsive" src="<?php echo base_url('assets/uploads/').'/'.$evenement->image1; ?>" alt="<?= $evenement->titre ?>">
                                         </span>
                                         <h5><a title="<?= $evenement->titre ?> à <?= $evenement->ville ?>" class="event-link" href="<?php echo base_url('evenement/').'/'.$evenement->id.'/'.url_title($evenement->titre) ?>"><?= $evenement->titre ?> <br/> <?= $evenement->ville ?></a></h5>
                                         <span class="event-date">Du  <?= date("d-m-Y", strtotime($evenement->debut)); ?> au <?= date("d-m-Y", strtotime($evenement->fin)); ?> </span>
