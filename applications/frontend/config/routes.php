@@ -59,6 +59,16 @@ $route['evenements/page/(:num)'] = "evenements/index";
 $route['evenement/(:num)/(:any)'] = "evenements/oneEvenement/$1";
 
 
+$route['activites/ville/(:any)'] = "activites/filter_activites";
+$route['activites/ville/(:any)/page/(:num)'] = "activites/filter_activites";
+$route['activites/type/(:any)'] = "activites/filter_activites";
+$route['activites/type/(:any)/page/(:num)'] = "activites/filter_activites";
+$route['activites/ville/(:any)/type/(:any)'] = "activites/filter_activites";
+$route['activites/ville/(:any)/type/(:any)/page/(:num)'] = "activites/filter_activites";
+$route['activites/'] = "activites/index";
+$route['activites/page/(:num)'] = "activites/index";
+$route['activites/(:num)/(:any)'] = "activites/oneActivite/$1";
+
 $route['espace-professionnel'] = "user/espace_pro/";
 $route['mot-de-passe-oublie'] = "user/mdp_oublie/";
 $route['inscription.html'] = "user/inscription/";

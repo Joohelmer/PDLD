@@ -36,7 +36,6 @@ class Filter_Pagination_Model extends CI_Model {
         		$this->db->where($key,(string)$value);
         }
 
-
 		$this->db->where('statut','actif');
 		$query = $this->db->get($table);
 		if ($query->num_rows() > 0) {
