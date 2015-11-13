@@ -37,58 +37,39 @@
                             <li><a <?php if($menu == "restaurants") echo "class='active'" ?> href="<?php echo base_url('restaurants') ?>" title=""><i class="fa icon-restau"></i>Se restaurer</a></li>
                             <li><a <?php if($menu == "sejourner") echo "class='active'" ?> title="">Séjourner</a></li>
                             <li class="dropdown mega-dropdown active">
-                                <a href="<?php echo base_url('se-divertir') ?>" <?php if($menu == "divertir") echo "class='dropdown-toggle active'" ?> class="dropdown-toggle" title="">Se divertir</a>
-                                <div class="dropdown-menu mega-dropdown-menu hidden-xs">
-                                    <div class="container-fluid">
-                                        <!-- Tab panes -->
-                                        <div class="tab-content">
-                                            <div class="tab-pane active" id="men">
-                                                <ul class="nav-list list-inline">
-                                                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Running.png"><span>Running</span></a></li>
-                                                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png"><span>Basketball</span></a></li>
-                                                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png"><span>Football</span></a></li>
-                                                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Soccer.png"><span>Soccer</span></a></li>
-                                                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_MensTraining.png"><span>Men's Training</span></a></li>
-                                                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_WomensTraining.png"><span>Women's Training</span></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="tab-pane" id="women">
-                                                <ul class="nav-list list-inline">
-                                                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Running.png"><span>Running</span></a></li>
-                                                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png"><span>Basketball</span></a></li>
-                                                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png"><span>Football</span></a></li>
-                                                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Soccer.png"><span>Soccer</span></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="tab-pane" id="kids">
-                                                <ul class="nav-list list-inline">
-                                                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Running.png"><span>Running</span></a></li>
-                                                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png"><span>Basketball</span></a></li>
-                                                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png"><span>Football</span></a></li>
-                                                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Soccer.png"><span>Soccer</span></a></li>
-                                                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_MensTraining.png"><span>Men's Training</span></a></li>
-                                                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_WomensTraining.png"><span>Women's Training</span></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="tab-pane" id="sports">
-                                                <ul class="nav-list list-inline">
-                                                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png"><span>Basketball</span></a></li>
-                                                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png"><span>Football</span></a></li>
-                                                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Soccer.png"><span>Soccer</span></a></li>
-                                                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_MensTraining.png"><span>Men's Training</span></a></li>
-                                                    <li><a href="#"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_WomensTraining.png"><span>Women's Training</span></a></li>
-                                                </ul>
+                                <a href="<?php echo base_url('activites') ?>" <?php if($menu == "activites") echo "class='dropdown-toggle active'" ?> class="dropdown-toggle" title="">Se divertir</a>
+                                <?php if(isset($mt_activites) && !empty($mt_activites)){ ?>
+                                    <div class="dropdown-menu mega-dropdown-menu hidden-xs">
+                                        <div class="container-fluid">
+                                            <!-- Tab panes -->
+                                            <div class="tab-content">
+                                                <?php $mtfa = true;  foreach ($mt_activites as $mt_a) { ?>
+                                                    <?php if($mtfa){ ?>
+                                                        <div class="tab-pane active" id="<?= $mt_a->ancre ?>">
+                                                    <?php $mtfa = false; } else { ?>
+                                                        <div class="tab-pane" id="<?= $mt_a->ancre ?>">
+                                                    <?php } ?>
+                                                            <ul class="nav-list list-inline">
+                                                                <?php foreach ($mt_a->sous_types as $ms) { ?>
+                                                                    <li><a href="<?php echo base_url('activites/type/'.urlencode($ms->nom)) ?>"><img src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Running.png"><span><?= $ms->nom ?></span></a></li>
+                                                                <?php } ?>
+                                                            </ul>
+                                                        </div>
+                                                <?php } ?>                                                
                                             </div>
                                         </div>
+                                        <!-- Nav tabs -->
+                                        <ul class="nav nav-tabs" role="tablist">
+                                            <?php $mtf = true; foreach ($mt_activites as $mt_activite) { ?>
+                                                <?php if($mtf){ ?>
+                                                    <li class="active"><a href="#<?= $mt_activite->ancre ?>" role="tab" data-toggle="tab"><?= $mt_activite->nom ?></a></li>
+                                                <?php $mtf = false; } else { ?>
+                                                    <li><a href="#<?= $mt_activite->ancre ?>" role="tab" data-toggle="tab"><?= $mt_activite->nom ?></a></li>
+                                                <?php } ?>
+                                            <?php } ?>
+                                        </ul>
                                     </div>
-                                    <!-- Nav tabs -->
-                                    <ul class="nav nav-tabs" role="tablist">
-                                        <li class="active"><a href="#men" role="tab" data-toggle="tab">Men</a></li>
-                                        <li><a href="#women" role="tab" data-toggle="tab">Women</a></li>
-                                        <li><a href="#kids" role="tab" data-toggle="tab">Kids</a></li>
-                                        <li><a href="#sports" role="tab" data-toggle="tab">Sports</a></li>
-                                    </ul>
-                                </div>
+                                <?php } ?>
                             </li>
                             <li><a <?php if($menu == "evenements") echo "class='active'" ?> href="<?php echo base_url('evenements') ?>" title="">Evènements</a></li>
                             <li><a <?php if($menu == "commerces") echo "class='active'" ?> title="">Commerces</a></li>

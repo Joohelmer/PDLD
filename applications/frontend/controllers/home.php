@@ -9,6 +9,12 @@ class Home extends CI_Controller {
         parent::__construct();
         $this->load->library("session");
         $this->load->helper('truncate');
+
+        $this->globalVar['mt_activites'] = $this->db->query('SELECT * FROM type_activite' )->result(); 
+        foreach ($this->globalVar['mt_activites'] as $value) {
+           $value->sous_types = $this->db->query('SELECT * FROM sous_activite WHERE menu = 1 AND id_type ='.(int)$value->id )->result();
+        }
+        $this->load->vars($this->globalVar);
     }
 
     public function index()
@@ -34,7 +40,6 @@ class Home extends CI_Controller {
         $recherche = $this->input->post('newsletter', TRUE);
 
         set_alert('success_newsletter', 'Inscription réussi.');
-
     }
 
     public function showMap(){
