@@ -40,6 +40,12 @@ $config['menu'] = array(
 		'icon'      => 'fa fa-cutlery'
 	),
 
+	'activite' => array(
+		'name'      => 'Toutes les activités',
+		'url'       => site_url('activite'),
+		'icon'      => 'fa fa-futbol-o'
+	),
+
 	'evenement' => array(
 		'name'      => 'Tous les événements',
 		'url'       => site_url('evenement'),
@@ -70,6 +76,8 @@ $config['menu'] = array(
 			'Mode de paiement'		=> site_url('modepaiement'),
 			'Services'				=> site_url('service'),
 			'Type d\'hébergement'	=> site_url('hebergement/type_hebergement'),
+			'Type d\'activité'	=> site_url('activite/type_activite'),
+			'Sous type d\'activité'	=> site_url('activite/sous_activite'),
 		)
 	),
 
