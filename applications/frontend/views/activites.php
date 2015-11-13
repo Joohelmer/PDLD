@@ -90,7 +90,7 @@
                                     <div class="col-md-9 col-xs-12">
                                         <div class="ft-data">
                                             <a class="ft-name text-upper" href="<?php echo base_url('restaurant').'/'.$restaurant->id.'/'.url_title($restaurant->titre); ?>" title="<?= $restaurant->titre ?>"><?= $restaurant->titre ?></a>
-                                            <a class="ft-type hidden-xs text-upper" ><i class="fa fa-cutlery"></i> Restaurant</a>
+                                            <a class="ft-type hidden-xs text-upper" ><i class="fa fa-binoculars"></i> <?= $restaurant->type ?></a>
                                         </div>
                                         <div class="ft-content-short">
                                             <?= mb_word_wrap($restaurant->description, 300,'...',false) ?>

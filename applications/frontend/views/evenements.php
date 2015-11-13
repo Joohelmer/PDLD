@@ -76,7 +76,7 @@
                                     <div class="col-md-9 col-xs-12">
                                         <div class="ft-data">
                                             <a class="ft-name text-upper" href="<?php echo base_url('evenement').'/'.$evenement->id.'/'.url_title($evenement->titre); ?>" title="<?= $evenement->titre ?>"><?= $evenement->titre ?></a>
-                                            <a class="ft-type hidden-xs text-upper" ><i class="fa fa-cutlery"></i> Evénement</a>
+                                            <a class="ft-type hidden-xs text-upper" ><i class="fa fa-calendar"></i> Evénement</a>
                                         </div>
                                         <div class="ft-content-short">
                                             <?= mb_word_wrap($evenement->description, 300,'...',false) ?>
