@@ -14,10 +14,10 @@ class Elasticriver extends CI_Controller {
     public function getRestaurants(){
 
 		$restos = $this->db->query('SELECT * FROM restaurants' )->result(); 
-        var_dump($restos);die;
+
         foreach ($restos as $value) {
             $id = $value->id;
-            $data = array("titre"=>$value->titre, "description"=>$value->description);
+            $data = array("titre"=>$value->titre,"type"=>"restaurant", "description"=>$value->description,"image"=>$value->image1,"url"=>base_url().'/restaurant/'.$value->id.'/'.url_title($value->titre));
             $this->elasticsearch->add("restaurants", $id, $data);
         }
 
@@ -30,11 +30,26 @@ class Elasticriver extends CI_Controller {
         
         foreach ($events as $value) {
             $id = $value->id;
-            $data = array("titre"=>$value->titre, "description"=>$value->description);
-            $this->elasticsearch->add("restaurants", $id, $data);
+            $data = array("titre"=>$value->titre,"type"=>"evenement", "description"=>$value->description,"image"=>$value->image1,"url"=>base_url().'/evenement/'.$value->id.'/'.url_title($value->titre));            $this->elasticsearch->add("restaurants", $id, $data);
         }
 
         echo "Terminé.";
+    }
+
+
+    public function autocomplete(){
+        $recherche = $this->input->get('recherche', TRUE);
+        $type = $this->input->get('type', TRUE);
+        $autocomplete = array();
+
+        if($type == "tout"){
+            $ES = $this->elasticsearch->query_wresultSize('',$recherche,4);
+        }
+        else{
+            $ES = $this->elasticsearch->query_wresultSize($type,$recherche,4);
+        }
+
+        echo json_encode(array('type'=>$type,'recherche'=>$ES['hits']['hits'],'mots'=>$recherche));
     }
  
 

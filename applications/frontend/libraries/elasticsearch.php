@@ -193,7 +193,7 @@ class ElasticSearch
 
     public function query_wresultSize($type, $query, $size = 999)
     {
-        return $this -> call($type . '/_search?' . http_build_query(array('q' => $q, 'size' => $size)));
+        return $this -> call($type . '/_search?' . http_build_query(array('q' => $query, 'size' => $size)));
     }
 
     /**

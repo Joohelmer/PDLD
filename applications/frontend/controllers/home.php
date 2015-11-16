@@ -36,6 +36,25 @@ class Home extends CI_Controller {
         $this->load->view('home.php', $data);
     }
 
+    public function bisindex()
+    {
+        $data = array();
+
+        $data['menu'] = 'accueil';
+
+        $data['actualites'] = $this->db->query('SELECT * FROM actualites WHERE actif = 1 LIMIT 2' )->result();
+        
+        $data['sliders'] = $this->db->query('SELECT * FROM slider_homepage' )->result();
+
+        $data['evenements'] = $this->db->query('SELECT * FROM evenements  WHERE fin >= "'. date('Y-m-d') .'" ORDER BY debut DESC LIMIT 3')->result();
+
+        $data['restaurants'] = $this->db->query('SELECT * FROM restaurants  WHERE statut = "actif" LIMIT 6')->result();
+
+        $data['seo'] = $this->db->query('SELECT * FROM seo  WHERE page = "accueil"')->row();
+
+        $this->load->view('bishome.php', $data);
+    }
+
     public function inscription_newsletter(){
         $recherche = $this->input->post('newsletter', TRUE);
 
