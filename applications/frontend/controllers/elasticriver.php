@@ -14,7 +14,7 @@ class Elasticriver extends CI_Controller {
     public function getRestaurants(){
 
 		$restos = $this->db->query('SELECT * FROM restaurants' )->result(); 
-        
+        var_dump($restos);die;
         foreach ($restos as $value) {
             $id = $value->id;
             $data = array("titre"=>$value->titre, "description"=>$value->description);
